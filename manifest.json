@@ -5,10 +5,6 @@
     "description": "Automatically fills the captcha.",
     "author": "Astra",
     "homepage_url": "https://github.com/kartikshriwas",
-    "developer": {
-        "name": "Kartik Shriwas",
-        "email": "kartikshriwas107@gmail.com"
-    },
     "host_permissions": ["<all_urls>"],
     "content_scripts": [
       {

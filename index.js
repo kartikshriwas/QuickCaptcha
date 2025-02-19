@@ -1,15 +1,6 @@
 function QuickCaptcha() {
-	const hdncaptcha = document.querySelector("#hdncaptcha")?.value;
-	const txtcaptcha = document.querySelector("#txtcaptcha");
-	if (hdncaptcha && txtcaptcha) {
-		txtcaptcha.value = hdncaptcha.toUpperCase();
-	}
+    const txtcaptcha = document.querySelector("#txtcaptcha");
+    if (txtcaptcha) txtcaptcha.value = txtcaptcha.getAttribute("data-captcha")?.toUpperCase() || "";
 }
 requestAnimationFrame(QuickCaptcha);
-const observer = new MutationObserver(() => {
-	requestAnimationFrame(QuickCaptcha);
-});
-observer.observe(document.body, {
-    subtree: true,
-    attributes: true
-});
+new MutationObserver(() => requestAnimationFrame(QuickCaptcha)).observe(document.body, { subtree: true, attributes: true });
